@@ -17,9 +17,12 @@
 			          material="color:green;"
 			          geometry="primitive:sphere; radius: 0.5;"
 			></a-entity> -->
-            <a-entity id='man-entity' gltf-model="src: url(archive/model.gltf);" position='0 0 0'>
-            </a-entity>
-            
+            <!-- <a-entity id='man-entity' gltf-model="src: url(archive/model.gltf);" position='0 0 0'>
+            </a-entity> -->
+            <a-entity position="0 1 0"
+                animation-mixer="clip: *;"
+                gltf-model="src: url(https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/AnimatedMorphSphere/glTF/AnimatedMorphSphere.gltf);">
+      </a-entity>
   	</a-marker>
   	<a-entity camera></a-entity>
     </a-scene>
