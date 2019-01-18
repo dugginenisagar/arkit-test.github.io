@@ -2,26 +2,13 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px;'>
-    <a-scene embedded arjs='trackingMethod: best;'>
-    <a-assets>
-    <!-- <a-asset-item id="model" src="https://rawgit.com/KhronosGroup/glTF-Sample-Models/master/1.0/CesiumMan/glTF/CesiumMan.gltf" crossOrigin="anonymous"></a-asset-item>  -->
-    <!-- <a-asset-item id="model" src="test_gltf_1/scene.gltf" crossOrigin="anonymous"></a-asset-item>  -->
-  </a-assets>
-  <!-- <a-gltf-model src="#model"></a-gltf-model> -->
-  <!-- <a-entity 
-      obj-model="obj: url(https://rishavjayswal.github.io/augmented-reality/resources/couch.obj); 
-      mtl: url(https://rishavjayswal.github.io/augmented-reality/resources/couch.mtl)">
-  </a-entity> -->
-  <!-- <a-entity 
-      obj-model="obj: url(https://hackthon2019.s3.amazonaws.com/sherlocked/man-in-park.obj); 
-      mtl: url(https://hackthon2019.s3.amazonaws.com/sherlocked/man-in-park.mtl)">
-  </a-entity> -->
-  <a-entity 
-      obj-model="obj: url(VijayJohnsonThakur.obj); 
-      mtl: url(VijayJohnsonThakur.mtl)">
-  </a-entity>
-  <a-marker-camera preset='hiro'></a-marker-camera>
+  <a-scene embedded arjs='trackingMethod: best;'>
+    <a-entity 
+        obj-model="obj: url(assets/VijayJohnsonThakur.obj); 
+        mtl: url(assets/VijayJohnsonThakur.mtl)">
+    </a-entity>
+    <a-marker-camera preset='custom' url='markers/symbol1-pattern-marker.patt'></a-marker-camera>
     <a-camera-static/>
-    </a-scene>
+  </a-scene>
 </body>
 </html>
