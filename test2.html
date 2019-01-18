@@ -1,7 +1,45 @@
 <html>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"> </script>
+<script>
+    // AFRAME.registerComponent('registerevents', {
+    //     init: function() {
+    //         var marker = this.el;
 
+    //         marker.setAttribute('emitevents', 'true');
+    //         marker.addEvenetListener('markerFound', function() {
+    //             var markerId = marker.id;
+    //             alert("Found");
+                
+    //             document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
+
+    //         });
+    //         marker.addEvenetListener('markerLost', function() {
+    //             var markerId = marker.id;
+    //             alert("Lost");
+    //             document.getElementById("callbackText").innerHTML = "";
+    //         });
+    //     }
+    // });
+
+    AFRAME.registerComponent('markerhandler', {
+       tick:function() {
+          if(document.querySelector("a-marker").object3D.visible == true) {
+            document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
+          } else {
+            // alert("Found");
+          }
+       }
+    });
+
+
+    // setTimeout(function(){ 
+    //     if(document.querySelector("a-marker").object3D.visible == true) {
+    //         alert("Found");
+    //     }
+    // }, 500);
+
+</script>
 <body style='margin : 0px;'>
   <a-scene embedded arjs='sourceType:webcam; trackingMethod: best;'>
     
@@ -9,52 +47,12 @@
     <a-marker id="anchor" preset='custom' type='pattern' url='markers/marker2-pattern.patt'>
         <a-entity 
             obj-model="obj: url(assets/VijayJohnsonThakur.obj); 
-            mtl: url(assets/VijayJohnsonThakur.mtl)">
+            mtl: url(assets/VijayJohnsonThakur.mtl)" markerhandler>
         </a-entity>
     </a-marker>
     
     <a-camera-static/>
 
-    <script>
-        // AFRAME.registerComponent('registerevents', {
-        //     init: function() {
-        //         var marker = this.el;
-
-        //         marker.setAttribute('emitevents', 'true');
-        //         marker.addEvenetListener('markerFound', function() {
-        //             var markerId = marker.id;
-        //             alert("Found");
-                    
-        //             document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
-
-        //         });
-        //         marker.addEvenetListener('markerLost', function() {
-        //             var markerId = marker.id;
-        //             alert("Lost");
-        //             document.getElementById("callbackText").innerHTML = "";
-        //         });
-        //     }
-        // });
-
-        AFRAME.registerComponent('markerhandler', {
-           tick:function() {
-              if(document.querySelector("a-marker").object3D.visible == true) {
-                document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
-              } else {
-                // alert("Found");
-              }
-           }
-        });
-
-
-        // setTimeout(function(){ 
-        //     if(document.querySelector("a-marker").object3D.visible == true) {
-        //         alert("Found");
-        //     }
-        // }, 500);
-        
-    </script>
-    
   </a-scene>
   <div id="callbackText" style="position: fixed;bottom: 20px;font-size: 30;">asfkdjgskdlmfnsd aekshjgdnbf klfkebsdjf</div>
 </body>
