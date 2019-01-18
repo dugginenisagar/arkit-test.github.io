@@ -2,6 +2,12 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
 <!-- <script src="js/aframe-ar.js"></script> -->
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"> </script>
+<script type="text/javascript">
+    var anchorRef = document.getElementById("anchor");
+    anchorRef.addEventListener("markerFound", (e)=>{ 
+        alert("found");
+    }
+</script>
 <body style='margin : 0px;'>
   <a-scene embedded arjs='trackingMethod: best;'>
     <a-entity 
@@ -9,7 +15,7 @@
         mtl: url(assets/VijayJohnsonThakur.mtl)">
     </a-entity>
     
-    <a-marker-camera preset='custom' type='pattern' url='markers/marker2-pattern.patt'></a-marker-camera>
+    <a-marker-camera id="anchor" preset='custom' type='pattern' url='markers/marker2-pattern.patt'></a-marker-camera>
     
     <a-camera-static/>
   </a-scene>
