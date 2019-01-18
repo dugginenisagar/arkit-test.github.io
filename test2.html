@@ -1,12 +1,22 @@
 <html>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
-<!-- <script src="js/aframe-ar.js"></script> -->
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"> </script>
-<script type="text/javascript">
-    var anchorRef = document.getElementById("anchor");
-    anchorRef.addEventListener("markerFound", (e)=>{ 
-        alert("found");
-    }
+<script>
+    AFRAME.registerComponent('registevents', {
+        init: function() {
+            var marker = this.el;
+
+            marker.setAttribute('emitevents', 'true');
+            marker.addEvenetListener('markerFound', function() {
+                var markerId = marker.id;
+                alert("Found");
+            });
+            marker.addEvenetListener('markerLost', function() {
+                var markerId = marker.id;
+                alert("Lost");
+            });
+        }
+    });
 </script>
 <body style='margin : 0px;'>
   <a-scene embedded arjs='trackingMethod: best;'>
