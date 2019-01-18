@@ -10,10 +10,14 @@
             marker.addEvenetListener('markerFound', function() {
                 var markerId = marker.id;
                 alert("Found");
+                
+                document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
+
             });
             marker.addEvenetListener('markerLost', function() {
                 var markerId = marker.id;
                 alert("Lost");
+                document.getElementById("callbackText").innerHTML = "";
             });
         }
     });
@@ -49,5 +53,6 @@
     
     <a-camera-static/>
   </a-scene>
+  <div id="callbackText" style="position: fixed;bottom: 20px;font-size: 30;">asfkdjgskdlmfnsd aekshjgdnbf klfkebsdjf</div>
 </body>
 </html>
