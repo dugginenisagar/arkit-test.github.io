@@ -20,12 +20,14 @@
 </script>
 <body style='margin : 0px;'>
   <a-scene embedded arjs='trackingMethod: best;'>
-    <a-entity 
-        obj-model="obj: url(assets/VijayJohnsonThakur.obj); 
-        mtl: url(assets/VijayJohnsonThakur.mtl)">
-    </a-entity>
     
-    <a-marker-camera id="anchor" preset='custom' type='pattern' url='markers/marker2-pattern.patt'></a-marker-camera>
+    
+    <a-marker id="anchor" preset='custom' type='pattern' url='markers/marker2-pattern.patt'>
+        <a-entity 
+            obj-model="obj: url(assets/VijayJohnsonThakur.obj); 
+            mtl: url(assets/VijayJohnsonThakur.mtl)">
+        </a-entity>
+    </a-marker>
     
     <a-camera-static/>
   </a-scene>
