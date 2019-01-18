@@ -2,7 +2,7 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"> </script>
 <script>
-    // AFRAME.registerComponent('registevents', {
+    // AFRAME.registerComponent('registerevents', {
     //     init: function() {
     //         var marker = this.el;
 
@@ -18,12 +18,22 @@
     //     }
     // });
 
-
-    setTimeout(function(){ 
-        if(document.querySelector("a-marker").object3D.visible == true) {
+    AFRAME.registerComponent('markerhandler', {
+       tick:function() {
+          if(document.querySelector("a-marker").object3D.visible == true) {
             alert("Found");
-        }
-    }, 500);
+          } else {
+            // alert("Found");
+          }
+       }
+    });
+
+
+    // setTimeout(function(){ 
+    //     if(document.querySelector("a-marker").object3D.visible == true) {
+    //         alert("Found");
+    //     }
+    // }, 500);
     
 </script>
 <body style='margin : 0px;'>
