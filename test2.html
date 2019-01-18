@@ -3,12 +3,14 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"></script>
 <body style='margin : 0px;'>
   <a-scene embedded arjs='trackingMethod: best;'>
-    <a-entity 
-        obj-model="obj: url(assets/VijayJohnsonThakur.obj); 
-        mtl: url(assets/VijayJohnsonThakur.mtl)">
-    </a-entity>
+    
     <!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
-    <a-marker-camera preset='custom' url='markers/symbol1-pattern-marker.patt'></a-marker-camera>
+    <a-marker-camera preset='custom' type='pattern' url='markers/symbol1-pattern-marker.patt'>
+      <a-entity 
+          obj-model="obj: url(assets/VijayJohnsonThakur.obj); 
+          mtl: url(assets/VijayJohnsonThakur.mtl)">
+      </a-entity>
+    </a-marker-camera>
     <a-camera-static/>
   </a-scene>
 </body>
