@@ -2,35 +2,35 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"> </script>
 <script>
-    AFRAME.registerComponent('registerevents', {
-        init: function() {
-            var marker = this.el;
+    // AFRAME.registerComponent('registerevents', {
+    //     init: function() {
+    //         var marker = this.el;
 
-            marker.setAttribute('emitevents', 'true');
-            marker.addEvenetListener('markerFound', function() {
-                var markerId = marker.id;
-                alert("Found");
+    //         marker.setAttribute('emitevents', 'true');
+    //         marker.addEvenetListener('markerFound', function() {
+    //             var markerId = marker.id;
+    //             alert("Found");
                 
-                document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
+    //             document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
 
-            });
-            marker.addEvenetListener('markerLost', function() {
-                var markerId = marker.id;
-                alert("Lost");
-                document.getElementById("callbackText").innerHTML = "";
-            });
-        }
-    });
-
-    // AFRAME.registerComponent('markerhandler', {
-    //    tick:function() {
-    //       if(document.querySelector("a-marker").object3D.visible == true) {
-    //         alert("Found");
-    //       } else {
-    //         // alert("Found");
-    //       }
-    //    }
+    //         });
+    //         marker.addEvenetListener('markerLost', function() {
+    //             var markerId = marker.id;
+    //             alert("Lost");
+    //             document.getElementById("callbackText").innerHTML = "";
+    //         });
+    //     }
     // });
+
+    AFRAME.registerComponent('markerhandler', {
+       tick:function() {
+          if(document.querySelector("a-marker").object3D.visible == true) {
+            document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
+          } else {
+            // alert("Found");
+          }
+       }
+    });
 
 
     // setTimeout(function(){ 
