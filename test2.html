@@ -17,6 +17,14 @@
             });
         }
     });
+
+
+    setTimeout(function(){ 
+        if(document.querySelector("a-marker").object3D.visible == true) {
+            alert("Found");
+        }
+    }, 500);
+    
 </script>
 <body style='margin : 0px;'>
   <a-scene embedded arjs='trackingMethod: best;'>
