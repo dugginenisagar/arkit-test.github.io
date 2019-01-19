@@ -6,7 +6,7 @@
     AFRAME.registerComponent('markerhandler', {
        tick:function() {
           if(document.querySelector("a-marker").object3D.visible == true) {
-            document.getElementById("collectButton").style.display = "block";
+            document.getElementById("collectButton").disabled = false;
           } else {
             
           }
@@ -32,7 +32,7 @@
     <a-camera-static/>
 
   </a-scene>
-  <input type="button" name="" value="Collect" id="collectButton" 
-  style="display: none; width: 100px;margin: 0 auto;left: 50%;position: absolute;margin-left: -50px;" onclick="collect.performClick();" />
+  <input type="button" name="" value="Collect" id="collectButton" disabled=true 
+  style="width: 100px;margin: 0 auto;left: 50%;position: absolute;margin-left: -50px; bottom: 100px;" onclick="collect.performClick();" />
 </body>
 </html>
