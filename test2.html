@@ -2,46 +2,24 @@
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/examples/vendor/aframe/build/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.5/aframe/build/aframe-ar.js"> </script>
 <script>
-    // AFRAME.registerComponent('registerevents', {
-    //     init: function() {
-    //         var marker = this.el;
-
-    //         marker.setAttribute('emitevents', 'true');
-    //         marker.addEvenetListener('markerFound', function() {
-    //             var markerId = marker.id;
-    //             alert("Found");
-                
-    //             document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
-
-    //         });
-    //         marker.addEvenetListener('markerLost', function() {
-    //             var markerId = marker.id;
-    //             alert("Lost");
-    //             document.getElementById("callbackText").innerHTML = "";
-    //         });
-    //     }
-    // });
-
+    
     AFRAME.registerComponent('markerhandler', {
        tick:function() {
           if(document.querySelector("a-marker").object3D.visible == true) {
-            document.getElementById("callbackText").innerHTML = "whatever whatever whatever whatever";
+            document.getElementById("collectButton").style.display = "block";
           } else {
-            // alert("Found");
+            
           }
        }
     });
 
-
-    // setTimeout(function(){ 
-    //     if(document.querySelector("a-marker").object3D.visible == true) {
-    //         alert("Found");
-    //     }
-    // }, 500);
+    function collectObject() {
+        collect.performClick();
+    }
 
 </script>
 <body style='margin : 0px;'>
-  <a-scene embedded arjs='sourceType:webcam; trackingMethod: best;'>
+  <a-scene embedded arjs='sourceType:webcam; trackingMethod: best; debugUIEnabled: false;'>
     
     
     <a-marker id="anchor" preset='custom' type='pattern' url='markers/marker2-pattern.patt'>
@@ -54,6 +32,7 @@
     <a-camera-static/>
 
   </a-scene>
-  <div id="callbackText" style="position: fixed;bottom: 20px;font-size: 30;">asfkdjgskdlmfnsd aekshjgdnbf klfkebsdjf</div>
+  <input type="button" name="" value="Collect" id="collectButton" 
+  style="display: none; width: 100px;margin: 0 auto;left: 50%;position: absolute;margin-left: -50px;" onclick="collect.performClick();" />
 </body>
 </html>
