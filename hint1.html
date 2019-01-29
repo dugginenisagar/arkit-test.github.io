@@ -7,6 +7,7 @@
        tick:function() {
           if(document.querySelector("a-marker").object3D.visible == true) {
             document.getElementById("collectButton").disabled = false;
+            document.getElementById("collectButton").style.display = "block";
           } else {
             
           }
@@ -33,7 +34,7 @@
 
   </a-scene>
   <input type="button" name="" value="Collect" id="collectButton" disabled=true 
-  style="width: 100px;margin: 0 auto;left: 50%;position: absolute;margin-left: -50px; bottom: 100px; z-index: 9999;" onclick="collect.performClick();" />
+  style="width: 100px;margin: 0 auto;left: 50%;position: absolute;margin-left: -50px; bottom: 100px; z-index: 9999;background: red; padding: 10px 20px;color: #FFF; display: none;" onclick="collect.performClick();" />
   
 </body>
 </html>
